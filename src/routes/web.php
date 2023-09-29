@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrucksController;
+use App\Http\Controllers\SubunitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,8 @@ Route::get('/trucks/{trucks}/edit', [TrucksController::class, 'edit'])->name('tr
 Route::put('/trucks/{trucks}/update', [TrucksController::class, 'update'])->name('trucks.update');
 Route::delete('/trucks/{trucks}/delete', [TrucksController::class, 'delete'])->name('trucks.delete');
 
-Route::get('/trucks/subunits', [TrucksController::class, 'subunits'])->name('trucks.subunits');
-Route::post('/trucks/subunits', [TrucksController::class, 'createsubunit'])->name('trucks.createsubunit');
-Route::get('/trucks/subunits/{subunits}/edit', [TrucksController::class, 'editsubunit'])->name('trucks.editsubunit');
-Route::put('/trucks/subunits/{subunits}/update', [TrucksController::class, 'updatesubunit'])->name('trucks.updatesubunit');
-Route::delete('/trucks/subunits/{subunits}/delete', [TrucksController::class, 'deletesubunit'])->name('trucks.deletesubunit');
+Route::get('/trucks/assignsubunits', [SubunitsController::class, 'subunits'])->name('trucks.assignsubunits');
+Route::post('/trucks/assignsubunits', [SubunitsController::class, 'createsubunit'])->name('trucks.createsubunit');
+Route::get('/trucks/assignsubunits/{subunits}/edit', [SubunitsController::class, 'editsubunit'])->name('trucks.editsubunit');
+Route::put('/trucks/assignsubunits/{subunits}/update', [SubunitsController::class, 'updatesubunit'])->name('trucks.updatesubunit');
+Route::delete('/trucks/assignsubunits/{subunits}/delete', [SubunitsController::class, 'deletesubunit'])->name('trucks.deletesubunit');

@@ -43,7 +43,7 @@
     
     
     </div>
-    <form method="post" action="{{route('trucks.subunits')}}">
+    <form method="post" action="{{route('trucks.assignsubunits')}}">
         @csrf
         @method('post')
         <div>

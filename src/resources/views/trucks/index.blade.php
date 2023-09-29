@@ -18,7 +18,7 @@
         <a href="{{route('trucks.create')}}">Create a truck</a>
     </div>
     <div>
-        <a href="{{route('trucks.subunits')}}">Create a Subunit</a>
+        <a href="{{route('trucks.assignsubunits')}}">Create a Subunit</a>
     </div>
     <div>
         <table border="1">
