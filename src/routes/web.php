@@ -31,3 +31,6 @@ Route::post('/trucks/assignsubunits', [SubunitsController::class, 'createsubunit
 Route::get('/trucks/assignsubunits/{subunits}/edit', [SubunitsController::class, 'editsubunit'])->name('trucks.editsubunit');
 Route::put('/trucks/assignsubunits/{subunits}/update', [SubunitsController::class, 'updatesubunit'])->name('trucks.updatesubunit');
 Route::delete('/trucks/assignsubunits/{subunits}/delete', [SubunitsController::class, 'deletesubunit'])->name('trucks.deletesubunit');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
