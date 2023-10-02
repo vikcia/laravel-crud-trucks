@@ -106,7 +106,7 @@ class SubunitsController extends Controller
                     'end_date' => $request->end_date,
                 ]);
        
-        return redirect(route('trucks.index'));
+        return redirect(route('trucks.index'))->with('success', 'Subunit Created succesfully');
     }
     public function editsubunit(Truck_subunits $subunits){
         $trucks = Trucks::all();
@@ -153,12 +153,12 @@ class SubunitsController extends Controller
 
         $subunits->update($data);
  
-        return redirect(route('trucks.index'))->with('success', 'Subunit updated succesffully');
+        return redirect(route('trucks.index'))->with('success', 'Subunit updated succesfully');
     }
     public function deletesubunit(Truck_subunits $subunits){
 
         $subunits->delete();
  
-        return redirect(route('trucks.index'))->with('success', 'Subunit deleted succesffully');
+        return redirect(route('trucks.index'))->with('success', 'Subunit deleted succesfully');
     }
 }

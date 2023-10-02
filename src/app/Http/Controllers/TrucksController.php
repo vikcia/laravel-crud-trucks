@@ -16,38 +16,43 @@ class TrucksController extends Controller
         $trucks_subunits = Truck_subunits::all();
         return view('trucks.index', ['trucks' => $trucks, 'subunits' => $trucks_subunits]);
     }
+
     public function create(){
         return view('trucks.create');
     }
+    
     public function store(Request $request){
         $data = $request->validate([
             'unit_number' => 'required|string|max:255',
             'year' => 'required|integer|min:1900|max:'.(date('Y')+5),
             'notes' => 'nullable',
         ]);
-
+        
         $newTrucks = Trucks::create($data);
- 
-        return redirect(route('trucks.index'));
+        
+        return redirect(route('trucks.index'))->with('success', 'Truck cteated succesfully');
     }
+    
     public function edit(Trucks $trucks){
         return view('trucks.edit', ['trucks' => $trucks]);
     }
+    
     public function update(Trucks $trucks, Request $request){
         $data = $request->validate([
             'unit_number' => 'required|string|max:255',
             'year' => 'required|integer|min:1900|max:'.(date('Y')+5),
             'notes' => 'nullable',
         ]);
-
+        
         $trucks->update($data);
- 
-        return redirect(route('trucks.index'))->with('success', 'Truck updated succesffully');
+        
+        return redirect(route('trucks.index'))->with('success', 'Truck updated succesfully');
     }
+    
     public function delete(Trucks $trucks){
-
+        
         $trucks->delete();
- 
-        return redirect(route('trucks.index'))->with('success', 'Truck deleted succesffully');
+        
+        return redirect(route('trucks.index'))->with('success', 'Truck deleted succesfully');
     }
 }
